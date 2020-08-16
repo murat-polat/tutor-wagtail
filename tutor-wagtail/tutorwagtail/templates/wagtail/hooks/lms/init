@@ -1,0 +1,6 @@
+export DJANGO_SETTINGS_MODULE=lms.envs.tutor.production
+
+./manage.py lms shell -c \
+  "from django.contrib.auth import get_user_model;"
+
+./manage.py lms manage_user wagtail wagtail@solo.io --staff --superuser 
