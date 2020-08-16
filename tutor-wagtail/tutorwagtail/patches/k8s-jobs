@@ -1,0 +1,20 @@
+
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: wagtail-job
+  labels:
+    app.kubernetes.io/component: job
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: wagtail
+          image: {{ WAGTAIL_DOCKER_IMAGE }}
+          env:        
+            - name: SERVICE_VARIANT
+              value: wagtail
+            - name: EDX_PLATFORM_SETTINGS
+              value: tutor.production

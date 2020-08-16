@@ -1,0 +1,3 @@
+- name: wagtail-settings
+  files:
+    - plugins/wagtail/apps/settings/tutor.py

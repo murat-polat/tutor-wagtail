@@ -1,0 +1,18 @@
+############# Wagtail plugin
+
+wagtail:
+  image: {{ DOCKER_REGISTRY }}{{ WAGTAIL_DOCKER_IMAGE }}
+  volumes:
+    - ../plugins/wagtail/apps/settings/tutor.py:/openedx/wagtail/wagtail/tutor.py
+    - ../../data/wagtail:/openedx/data
+
+  environment:
+      SERVICE_VARIANT: lms
+      GUNICORN_WORKERS: 2
+      SETTINGS: ${EDX_PLATFORM_SETTINGS:-tutor.production}
+      
+
+  restart: unless-stopped
+  depends_on:
+    - lms
+    - mysql
