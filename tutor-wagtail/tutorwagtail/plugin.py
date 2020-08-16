@@ -28,11 +28,13 @@ config = {
 }
 
 hooks = {
+
+     "init": ["mysql","lms","wagtail"],   
 # Pull and build docker containers
     "build-image": {"wagtail": "muratp/wagtail"},
     "remote-image": {"wagtail": "muratp/wagtail"},
 # Initial all services
-    "init": ["mysql","lms","wagtail"]
+    
 }
 
 

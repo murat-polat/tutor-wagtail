@@ -34,7 +34,7 @@ server {
     proxy_pass http://wagtail-backend;
   }
 
-  location /static {
-    alias /var/www/wagtail/assets;
-  }
+  #location /static {
+  #  alias /var/www/wagtail/assets;
+  #}
 }

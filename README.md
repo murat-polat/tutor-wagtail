@@ -9,6 +9,8 @@ Wagtail Plugin for Tutor Open edX
 
 `source ~/tutor/bin/activate  `
 
+If you using Tutor in Production modus and on k8s, you have to add Wagtail subdomain to your " /etc/hosts "  file.
+
 Cloning and installing plugin:
 
 
@@ -47,5 +49,8 @@ Building new Docker services for Tutor:
 For Kubernetes deployment run:
 
 `tutor k8s quickstart`        http://wagtail.yourdomain/
+
+
+![](src/wagtail.png)
 
 Done :)

@@ -1,1 +1,1 @@
-- ../../data/blueprint:/var/www/wagtail
+- ../../data/wagtail:/var/www/wagtail
