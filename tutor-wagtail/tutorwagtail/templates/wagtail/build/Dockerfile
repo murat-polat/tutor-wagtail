@@ -13,10 +13,12 @@ RUN mkdir /openedx  openedx/wagtail
 
 RUN pip3 install wagtail gunicorn
 
+## Here you can add your custom Wagtail repository
+RUN git clone https://github.com/murat-polat/app 
 
-RUN wagtail start app && cd /app
+RUN cd /app
 
-WORKDIR /app
+WORKDIR /app/app
 
 RUN pip3 install -r requirements.txt
 
@@ -24,5 +26,5 @@ RUN python3 manage.py migrate
 
 
 EXPOSE 8000
-# Running server
+
 CMD gunicorn --bind=0.0.0.0:8000 --workers 2 --max-requests=1000 app.wsgi:application
