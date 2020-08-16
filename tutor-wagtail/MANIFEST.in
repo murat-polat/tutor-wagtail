@@ -1,0 +1,2 @@
+recursive-include tutorwagtail/patches *
+recursive-include tutorwagtail/templates *
