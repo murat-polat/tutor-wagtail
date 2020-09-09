@@ -22,7 +22,7 @@ Cloning and installing plugin:
 
 `tutor plugins list  `
 
-You should see  Wagtail plugin in your list. (If not, please reboot your server  check it again.)
+You should see  Wagtail plugin in your plugins list. (If it's not, please reboot your server  check it again.)
 
 `wagtail==0.1.0   `  
 
