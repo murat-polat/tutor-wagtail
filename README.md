@@ -16,9 +16,15 @@ Cloning and installing plugin:
 
 `git clone https://github.com/murat-polat/tutor-wagtail   `
 
+`cd tutor-wagtail  `
+
 `pip3 install -e tutor-wagtail    `
 
 `tutor plugins list  `
+
+You should see  Wagtail plugin in your list. (If not, please reboot your server  check it again.)
+
+`wagtail==0.1.0   `  
 
 `tutor plugins enable wagtail `
 
