@@ -59,4 +59,16 @@ For Kubernetes deployment run:
 
 ![](src/wagtail.png)
 
-Done :)
+
+### Login to admin site:
+
+Create superuser:
+
+`tutor local run wagtail python3 manage.py createsuperuser  `
+
+login your admin site:
+
+http://wagtail.your_domain/admin
+
+
+![](src/wagtailAdmin.png)

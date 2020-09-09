@@ -1,0 +1,9 @@
+wagtail-job:
+  image: {{ WAGTAIL_DOCKER_IMAGE }}
+  volumes:
+    - ../plugins/wagtail/apps/settings/tutor.py:/openedx/wagtail/wagtail/tutor.py
+  environment:
+    SERVICE_VARIANT: lms
+    SETTINGS: ${EDX_PLATFORM_SETTINGS:-tutor.production}
+  depends_on:
+    - mysql
