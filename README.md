@@ -4,12 +4,13 @@ Wagtail Plugin for Tutor Open edX
 
 
 ## Installation:
+If using virtualenv
 
 `python3 -m venv ~/tutor  `
 
 `source ~/tutor/bin/activate  `
 
-If you using Tutor in Production modus and on k8s, you have to add Wagtail subdomain to your " /etc/hosts "  file.
+If you using Tutor Production modus and on K8s, you have to add Wagtail subdomain to your " /etc/hosts "  file. 
 
 Cloning and installing plugin:
 
@@ -24,33 +25,17 @@ Cloning and installing plugin:
 
 You should see  Wagtail plugin in your plugins list. (If it's not, please reboot your server  check it again.)
 
-`wagtail==0.1.0   `  
+`wagtail==0.2.0   `  
 
 `tutor plugins enable wagtail `
 
-Than grep all codes below and paste to terminal, enter
-
-`tutor config save --set WAGTAIL_HOST=wagtail.{{LMS_HOST}} \ `
-
-`tutor config save --set WAGTAIL_MYSQL_DATABASE=wagtail \`
-
-`tutor config save --set WAGTAIL_MYSQL_HOST=mysql \`
-
-`tutor config save --set WAGTAIL_MYSQL_PASSWORD=wagtail \`
-
-`tutor config save --set WAGTAIL_MYSQL_PORT=3306 \ `
-
-`tutor config save --set WAGTAIL_MYSQL_USERNAME=wagtail \`
-
-`tutor config save --set WAGTAIL_DOCKER_IMAGE=muratp/wagtail \`
 
 Building new Docker services for Tutor:
 
 `tutor images build wagtail  `
 
-`tutor images build openedx      `  optional
-
 `tutor local quickstart  `
+
 
 For Kubernetes deployment run:
 
@@ -58,6 +43,16 @@ For Kubernetes deployment run:
 
 
 ![](src/wagtail.png)
+
+### Customization
+
+First of all, you must create your custom Wagtail app and push back to GitHub.
+This plugin uses default  https://github.com/murat-polat/app. After your custom repo, all you need to change
+Dockerfile which will point your custom repo/application
+
+https://github.com/murat-polat/tutor-wagtail/blob/f33da793a28f15f1f89f6d48697504ddfbc44564/tutor-wagtail/tutorwagtail/templates/wagtail/build/wagtail/Dockerfile#L17
+
+Thats all :)
 
 
 ### Login to admin site:

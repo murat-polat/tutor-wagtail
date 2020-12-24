@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:20.04
 
 LABEL MAINTAINER=MP
 RUN apt-get update && apt-get -y upgrade
@@ -11,7 +11,7 @@ RUN pip3 install mysqlclient
 RUN mkdir /openedx  openedx/wagtail
 
 
-RUN pip3 install wagtail gunicorn
+RUN pip3 install wagtail uwsgi
 
 ## Here you can add your custom Wagtail repository
 RUN git clone https://github.com/murat-polat/app 
@@ -27,4 +27,11 @@ RUN pip3 install -r requirements.txt
 
 EXPOSE 8000
 
-CMD gunicorn --bind=0.0.0.0:8000 --workers 2 --max-requests=1000 app.wsgi:application
+CMD uwsgi \
+    --http 0.0.0.0:8000 \
+    --thunder-lock \
+    --single-interpreter \
+    --enable-threads \
+    --processes=2 \
+    --wsgi-file app/wsgi.py
+
