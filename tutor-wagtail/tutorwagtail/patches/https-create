@@ -1,1 +1,2 @@
-certbot certonly --standalone -n --agree-tos -m admin@{{ LMS_HOST }} -d {{ WAGTAIL_HOST }}
+## After upgrading to Koa, Caddyfile will be responsible for that.
+## certbot certonly --standalone -n --agree-tos -m admin@{{ LMS_HOST }} -d {{ WAGTAIL_HOST }}
