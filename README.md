@@ -50,7 +50,7 @@ First of all, you must create your custom Wagtail app and push back to GitHub.
 This plugin uses default  https://github.com/murat-polat/app. After your custom repo, all you need to change
 Dockerfile which will point your custom repo/application
 
-https://github.com/murat-polat/tutor-wagtail/blob/f33da793a28f15f1f89f6d48697504ddfbc44564/tutor-wagtail/tutorwagtail/templates/wagtail/build/wagtail/Dockerfile#L17
+https://github.com/murat-polat/tutor-wagtail/blob/7828d2ebb52c545400d941834935399a8df1e0bd/tutor-wagtail/tutorwagtail/templates/wagtail/build/wagtail/Dockerfile#L17
 
 Thats all :)
 
