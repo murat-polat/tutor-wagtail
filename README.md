@@ -30,6 +30,9 @@ You should see  Wagtail plugin in your plugins list. (If it's not, please reboot
 `tutor plugins enable wagtail `
 
 
+`tutor config save`
+
+
 Building new Docker services for Tutor:
 
 `tutor images build wagtail  `
