@@ -29,8 +29,8 @@ setup(
     long_description=readme,
     packages=find_packages(exclude=["tests*"]),
     include_package_data=True,
-    python_requires=">=3.5",
-    install_requires=["tutor-openedx"],
+    python_requires=">=3.7",
+    install_requires=["tutor>=13, <=15"],
     entry_points={
         "tutor.plugin.v0": [
             "wagtail = tutorwagtail.plugin"
